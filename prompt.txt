@@ -1,0 +1,477 @@
+```text
+# Project: Studio Portfolio
+
+Build a modern, premium, responsive UI-only website for a photography and videography studio based in Bengaluru, Karnataka.
+
+## Tech Stack
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion (subtle animations)
+- shadcn/ui components
+- Lucide Icons
+
+No backend.
+No authentication.
+No database.
+Use placeholder images from Unsplash or Pexels.
+Focus entirely on UI/UX.
+
+---
+
+# Design Style
+
+The website should feel:
+
+- Premium
+- Minimal
+- Elegant
+- Modern
+- Spacious
+- Fast
+- Mobile-first
+
+Use plenty of whitespace.
+
+Color palette:
+- White
+- Black
+- Neutral greys
+- Small gold accent (#C9A227)
+
+Typography:
+- Large hero headings
+- Clean sans-serif fonts
+- Strong visual hierarchy
+
+Animations:
+- Smooth fade-ins
+- Scroll reveal
+- Soft hover effects
+- Image zoom on hover
+- No excessive animations
+
+---
+
+# Target Audience
+
+People looking to book photographers for:
+
+- Weddings
+- Pre-weddings
+- Engagements
+- Maternity shoots
+- Baby shoots
+- Birthday events
+- Housewarming
+- Corporate events
+- Fashion shoots
+- Product photography
+- Commercial videos
+- Reels
+- Social media content
+- Cinematic videos
+
+The website should make it immediately obvious what services the studio offers.
+
+---
+
+# Navigation
+
+Sticky transparent navbar.
+
+Logo on left.
+
+Navigation:
+
+- Home
+- Services
+- Packages
+- Portfolio
+- About
+- Testimonials
+- FAQ
+- Contact
+
+CTA button:
+
+Book a Shoot
+
+---
+
+# Home Page
+
+Large cinematic hero section.
+
+Include:
+
+Headline:
+
+Capture Every Moment Beautifully
+
+Subtitle:
+
+Professional photography and videography services across Bengaluru for weddings, celebrations, brands, and businesses.
+
+Buttons:
+
+View Packages
+
+Book Now
+
+Hero should contain a full-width photography/video background.
+
+---
+
+# Services Preview
+
+Large cards for every service.
+
+Each card should include:
+
+Icon
+
+Title
+
+One-line description
+
+Learn More button
+
+Services:
+
+Wedding Photography
+
+Pre Wedding
+
+Engagement
+
+Maternity
+
+Baby Shoot
+
+Birthday Events
+
+Corporate Events
+
+Product Photography
+
+Commercial Videos
+
+Social Media Reels
+
+Drone Photography
+
+Candid Photography
+
+Traditional Photography
+
+Cinematic Wedding Films
+
+---
+
+# Why Choose Us
+
+Simple icon section.
+
+Examples:
+
+Experienced Team
+
+Professional Equipment
+
+Fast Delivery
+
+High Resolution Images
+
+Drone Coverage
+
+Creative Editing
+
+Affordable Packages
+
+---
+
+# Featured Portfolio
+
+Beautiful masonry gallery.
+
+Categories filter:
+
+All
+
+Wedding
+
+Pre Wedding
+
+Baby
+
+Corporate
+
+Products
+
+Videos
+
+Hover effect:
+
+Show project title
+
+---
+
+# Packages Page
+
+Create clear pricing cards.
+
+Three package tiers.
+
+## Basic
+
+Ideal for small events
+
+Price:
+
+₹15,000–25,000
+
+Includes:
+
+2 Photographers
+
+Basic Editing
+
+100 Edited Photos
+
+Online Gallery
+
+---
+
+## Premium
+
+₹35,000–60,000
+
+Includes:
+
+Photography
+
+Videography
+
+Drone Coverage
+
+300 Edited Photos
+
+Highlight Film
+
+Premium Album
+
+---
+
+## Luxury
+
+₹70,000+
+
+Includes:
+
+Full Team
+
+Multiple Cameras
+
+Drone
+
+Cinematic Film
+
+Premium Album
+
+Same Day Teaser
+
+Unlimited Coverage
+
+Luxury Editing
+
+Add comparison table underneath showing exactly what each package includes.
+
+---
+
+# Individual Service Pages
+
+Each service should have:
+
+Hero Banner
+
+Overview
+
+What's Included
+
+Ideal For
+
+Sample Gallery
+
+Package Options
+
+FAQs
+
+CTA
+
+Book This Service
+
+Services:
+
+Wedding
+
+Pre Wedding
+
+Engagement
+
+Maternity
+
+Birthday
+
+Baby Shoot
+
+Corporate
+
+Products
+
+Commercial Videos
+
+Drone
+
+Reels
+
+---
+
+# About Page
+
+Story of the studio.
+
+Mission.
+
+Vision.
+
+Meet the Team.
+
+Years of experience.
+
+Projects completed.
+
+Cities served.
+
+---
+
+# Testimonials
+
+Beautiful testimonial cards.
+
+Customer image
+
+Name
+
+Event
+
+Review
+
+5-star rating
+
+---
+
+# FAQ
+
+Accordion component.
+
+Examples:
+
+How do I book?
+
+How much advance is required?
+
+When will photos be delivered?
+
+Do you travel outside Bengaluru?
+
+Do you provide albums?
+
+Can packages be customised?
+
+---
+
+# Contact
+
+Large contact section.
+
+Include:
+
+Phone
+
+WhatsApp
+
+Email
+
+Studio Location
+
+Embedded Google Maps placeholder
+
+Simple enquiry form (UI only)
+
+Fields:
+
+Name
+
+Phone
+
+Email
+
+Event Type
+
+Preferred Date
+
+Message
+
+Submit button (no functionality)
+
+---
+
+# Footer
+
+Logo
+
+Quick Links
+
+Services
+
+Social Media
+
+Instagram
+
+Facebook
+
+YouTube
+
+Copyright
+
+---
+
+# Responsive
+
+Perfect on:
+
+Desktop
+
+Tablet
+
+Mobile
+
+---
+
+# UI Requirements
+
+- Reusable components
+- Clean folder structure
+- Consistent spacing
+- Accessible UI
+- Semantic HTML
+- Optimized images
+- Smooth page transitions
+- Dark mode support
+- Dummy content only
+- Production-quality frontend
+
+The final result should look like a premium photography studio website suitable for studios in Bengaluru and easily adaptable for any photography or videography business.
+```
