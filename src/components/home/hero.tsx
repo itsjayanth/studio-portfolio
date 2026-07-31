@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
-import { studioImage } from "@/lib/images";
+import { categoryImage } from "@/lib/images";
 import { siteConfig } from "@/lib/data";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-black">
+    <section className="relative -mt-16 flex min-h-screen items-center overflow-hidden bg-black md:-mt-20">
       <Image
-        src={studioImage(0, { w: 1920, q: 80 })}
-        alt="Cinematic wedding photography by Lumière Studio"
+        src={categoryImage("wedding", 0, { w: 1920, q: 80 })}
+        alt={`Cinematic Indian wedding photography by ${siteConfig.name}`}
         fill
         priority
         sizes="100vw"
@@ -32,14 +32,15 @@ export function Hero() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mt-6 max-w-xl text-base text-white/70 sm:text-lg">
-            Professional photography and videography services across Bengaluru for weddings,
-            celebrations, brands, and businesses.
+            {siteConfig.name} is a premium photography and videography studio in {siteConfig.city},
+            crafting timeless wedding, celebration, and brand stories across India.
           </p>
         </Reveal>
         <Reveal delay={0.3}>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
               render={<Link href="/packages" />}
+              nativeButton={false}
               size="lg"
               className="h-12 bg-gold px-8 text-base text-black hover:bg-gold/90"
             >
@@ -47,6 +48,7 @@ export function Hero() {
             </Button>
             <Button
               render={<Link href="/contact" />}
+              nativeButton={false}
               size="lg"
               variant="outline"
               className="h-12 border-white/30 bg-white/5 px-8 text-base text-white backdrop-blur-sm hover:bg-white/15 hover:text-white"

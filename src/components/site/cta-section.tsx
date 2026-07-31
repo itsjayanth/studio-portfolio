@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/reveal";
 export function CtaSection({
   title = "Ready to capture your story?",
   description = "Tell us about your event and we'll help you find the perfect package.",
-  primaryLabel = "Book a Shoot",
+  primaryLabel = "Book Now",
   primaryHref = "/contact",
   secondaryLabel = "View Packages",
   secondaryHref = "/packages",
@@ -37,6 +37,7 @@ export function CtaSection({
         <div className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             render={<Link href={primaryHref} />}
+            nativeButton={false}
             size="lg"
             className="h-12 bg-gold px-8 text-base text-black hover:bg-gold/90"
           >
@@ -44,6 +45,7 @@ export function CtaSection({
           </Button>
           <Button
             render={<Link href={secondaryHref} />}
+            nativeButton={false}
             size="lg"
             variant="outline"
             className="h-12 border-background/20 bg-transparent px-8 text-base text-background hover:bg-background/10 hover:text-background"

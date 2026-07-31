@@ -7,7 +7,7 @@ import { RevealItem } from "@/components/motion/reveal";
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <RevealItem className="h-full">
-      <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
+      <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5">
         <StarRating rating={testimonial.rating} />
         <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/90">
           &ldquo;{testimonial.review}&rdquo;
@@ -15,7 +15,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <figcaption className="mt-6 flex items-center gap-3">
           <div className="relative size-11 overflow-hidden rounded-full bg-muted">
             <Image
-              src={portraitImage(testimonial.imageIndex)}
+              src={portraitImage(testimonial.avatarCategory, testimonial.imageIndex)}
               alt={testimonial.name}
               fill
               sizes="44px"

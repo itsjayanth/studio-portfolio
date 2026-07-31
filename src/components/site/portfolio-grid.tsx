@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { studioImage } from "@/lib/images";
+import { categoryImage } from "@/lib/images";
 import {
   portfolioCategories,
   portfolioItems,
@@ -32,7 +32,7 @@ function Tile({ item, priority }: { item: PortfolioItem; priority?: boolean }) {
       )}
     >
       <Image
-        src={studioImage(item.imageIndex, { w: 800 })}
+        src={categoryImage(item.imageCategory, item.imageIndex, { w: 800 })}
         alt={item.title}
         fill
         priority={priority}

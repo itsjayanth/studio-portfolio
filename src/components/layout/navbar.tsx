@@ -31,7 +31,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
+        "fixed inset-x-0 top-0 z-50 w-full transition-colors duration-300",
         scrolled
           ? "border-b border-border/80 bg-background/85 backdrop-blur-md"
           : "border-b border-transparent bg-transparent",
@@ -62,9 +62,10 @@ export function Navbar() {
           <ThemeToggle className="hidden sm:inline-flex" />
           <Button
             render={<Link href="/contact" />}
+            nativeButton={false}
             className="hidden bg-gold text-black hover:bg-gold/90 sm:inline-flex"
           >
-            Book a Shoot
+            Book Now
           </Button>
 
           <Sheet>
@@ -83,6 +84,7 @@ export function Navbar() {
                   <SheetClose
                     key={link.href}
                     render={<Link href={link.href} />}
+                    nativeButton={false}
                     className={cn(
                       "rounded-md px-3 py-2.5 text-left text-sm font-medium transition-colors hover:bg-muted",
                       pathname === link.href ? "bg-muted text-foreground" : "text-muted-foreground",
@@ -97,9 +99,10 @@ export function Navbar() {
                 </div>
                 <SheetClose
                   render={<Link href="/contact" />}
+            nativeButton={false}
                   className={cn(buttonVariants(), "mt-4 bg-gold text-black hover:bg-gold/90")}
                 >
-                  Book a Shoot
+                  Book Now
                 </SheetClose>
               </nav>
             </SheetContent>

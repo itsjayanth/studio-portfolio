@@ -21,9 +21,9 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Lumière Studio | Photography & Videography in Bengaluru",
+  title: "VP Films | Photography & Videography in Bengaluru",
   description:
-    "Premium photography and videography for weddings, celebrations, brands, and businesses across Bengaluru.",
+    "VP Films is a premium photography and videography studio in Bengaluru — capturing Indian weddings, celebrations, brands, and businesses. Capturing Moments. Creating Memories.",
 };
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-16 md:pt-20">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

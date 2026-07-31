@@ -1,12 +1,36 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-const variants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-};
+/**
+ * Self-contained scroll reveal built on a plain IntersectionObserver rather
+ * than framer-motion's whileInView: with staggered/delayed children, that API
+ * only ever animated the first element in on this stack (Next 16 + React
+ * 19.2 + framer-motion 12) — every later sibling stayed frozen mid-transition.
+ */
+function useRevealed<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, revealed };
+}
 
 export function Reveal({
   children,
@@ -19,57 +43,51 @@ export function Reveal({
   className?: string;
   as?: "div" | "li";
 }) {
-  const MotionTag = as === "li" ? motion.li : motion.div;
+  const { ref, revealed } = useRevealed<HTMLDivElement & HTMLLIElement>();
+  const revealClassName = cn(
+    "transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+    revealed ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0",
+    className,
+  );
+  const style = { transitionDelay: revealed ? `${delay}s` : "0s" };
+
+  if (as === "li") {
+    return (
+      <li ref={ref} className={revealClassName} style={style}>
+        {children}
+      </li>
+    );
+  }
+
   return (
-    <MotionTag
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={variants}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div ref={ref} className={revealClassName} style={style}>
       {children}
-    </MotionTag>
+    </div>
   );
 }
 
 export function RevealGroup({
   children,
   className,
-  stagger = 0.08,
 }: {
   children: ReactNode;
   className?: string;
-  stagger?: number;
 }) {
-  return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ staggerChildren: stagger }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 export function RevealItem({
   children,
   className,
+  delay = 0,
 }: {
   children: ReactNode;
   className?: string;
+  delay?: number;
 }) {
   return (
-    <motion.div
-      className={className}
-      variants={variants}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <Reveal delay={delay} className={className}>
       {children}
-    </motion.div>
+    </Reveal>
   );
 }
