@@ -103,7 +103,7 @@ export const services: Service[] = [
     shortDescription: "Full-length wedding films shot on cinema cameras.",
     icon: Video,
     category: "Videos",
-    imageCategory: "wedding",
+    imageCategory: "weddingFilm",
     overview:
       "Multi-camera coverage of your wedding day, edited into a documentary-style film that plays back your day exactly as it happened, with music and colour grading to match.",
     included: [
