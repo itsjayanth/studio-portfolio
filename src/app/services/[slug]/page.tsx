@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/site/section-heading";
 import { PackageCard } from "@/components/site/package-card";
 import { FaqAccordion } from "@/components/site/faq-accordion";
 import { CtaSection } from "@/components/site/cta-section";
+import { ReelsGallery } from "@/components/site/reels-gallery";
 import { RevealGroup, RevealItem, Reveal } from "@/components/motion/reveal";
 import { services, packages } from "@/lib/data";
 import { categoryImage } from "@/lib/images";
@@ -102,6 +103,17 @@ export default async function ServiceDetailPage({
           </RevealGroup>
         </div>
       </section>
+
+      {service.reels && service.reels.length > 0 && (
+        <section className="container-px mx-auto max-w-7xl py-20 md:py-28">
+          <SectionHeading
+            eyebrow="Reels"
+            title="Short-form highlights"
+            description="Quick, high-clarity cuts sized for Instagram Reels."
+          />
+          <ReelsGallery sources={service.reels} />
+        </section>
+      )}
 
       <section className="container-px mx-auto max-w-7xl py-20 md:py-28">
         <SectionHeading eyebrow="Pricing" title="Package Options" description="Every package can be tailored to fit this service." />

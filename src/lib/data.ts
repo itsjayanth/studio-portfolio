@@ -66,6 +66,7 @@ export interface Service {
   included: string[];
   idealFor: string[];
   faqs: { question: string; answer: string }[];
+  reels?: string[];
 }
 
 export const services: Service[] = [
@@ -118,6 +119,12 @@ export const services: Service[] = [
         question: "How long is the final film?",
         answer: "Full-length films typically run 30-90 minutes depending on the number of ceremonies covered.",
       },
+    ],
+    reels: [
+      "/videos/wedding-reel-1.mp4",
+      "/videos/wedding-reel-2.mp4",
+      "/videos/wedding-reel-3.mp4",
+      "/videos/wedding-reel-4.mp4",
     ],
   },
   {
